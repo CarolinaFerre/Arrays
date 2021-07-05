@@ -1,0 +1,40 @@
+
+/*Realizar un programa completo que dibuje un número variable de líneas de asteriscos
+ * en función de los argumentos que recibe desde el sistema operativo
+ */
+
+package ejerciciosstring;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class JavaPinta {
+	static Scanner sc=new Scanner(System.in);
+	static int numero;
+	static int longitud;
+	
+	public static void javaPinta(int numero,int[]lista) {
+		for(int i=0;i<lista.length;i++) {
+			for(int j=0;j<lista[i];j++) {
+			System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+	}
+	public static void main(String[] args) {
+		longitud=6;
+		 int[]lista =new int[longitud];
+		
+			for(int i=0;i<lista.length;i++) {
+				System.out.println("Introduzca números");
+				lista[i]=numero=sc.nextInt();
+				
+			}
+			System.out.println(Arrays.toString(lista));
+			JavaPinta.javaPinta(numero, lista);
+		}
+		
+		
+	}
+
