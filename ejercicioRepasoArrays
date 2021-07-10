@@ -1,0 +1,122 @@
+/*Ejercicios de arrays de e-recursos moodle programación apartado arrays */
+/* En el primer apartado hay que escribir 10 números, almacenarlos en array, decir si son par o impar y decir cuál es el máximo y el mínimo y */
+/* mostrar el array inverso. */
+/* En el segundo apartado hay que escribir 20 números y almacenarlos en array, calcular el porcentaje con respecto al total, calcular la media */
+/* y el porcentaje de la media del total de los números y comparar ese porcentaje con el porcentaje de cada uno de los números. */
+/* Si el porcentaje del número es mayor se indica que es mayor que el porcentaje de la media y sino también se indica.*/
+/*
+Este ejercicio comprende estos apartados: 
+
+1.	Leer 10 números, almacenarlos en una tabla y mostrar su suma.
+
+2.	Leer 10 números, almacenarlos en una tabla y mostrarlos en orden inverso
+
+3.	Leer 10 números , almacenarlos en una tabla y mostrar primero las posiciones pares y después la impares.
+
+4.	Almacenar en una tabla de 100 elementos números aleatorios entre 1 y 500. mostrar el máximo, el mínimo y la media.  Realizar otra versión donde no puedan almacenarse números repetidos.
+
+5.	Leer 20 número, y calcular el porcentaje de valores que supera el valor de la media
+
+*/
+package ejerciciosdearrays;
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class ejercicio123Arrays {
+	static Scanner sc=new Scanner(System.in);
+	static int numero;
+	static int contador=0;
+	static int[]array;
+	static int[]array2;
+	static int contador2=0;
+	static int numero2;
+	static int suma;
+	static double media;
+	static int max=0;
+	static int min=0;
+	static int porcentaje;
+	static int[] porcentajeArray;
+	static double porcentajemedia;
+	static int sumaArrays;
+	
+	//Mostrar array y array inverso
+	public static void mostrarArrayInverso(int[]array) {
+		System.out.println("El contenido del array es= "+Arrays.toString(array));
+		System.out.println("El array inverso es= ");
+		for(int i=array.length-1;i>0;i--) {
+			System.out.print(array[i]);
+		}
+		System.out.println();
+	}
+	public static void minMax(int[]array) {
+		for(int i=0;i<array.length;i++) {
+			if(array[i]>max) {
+				max=array[i];
+				
+			}else if(array[i]<min) {
+				min=array[i];
+				
+				}
+			}
+		System.out.println("El máximo es "+max);
+		System.out.println("El mínimo es "+min);
+		}
+
+	public static void main(String[] args) {
+		array=new int[10];
+		System.out.println("Introduzca 10 números");
+		while(contador!=10) {
+			//Introducir 10 números tecleados por usuario en array con longitud 10
+			for(int i=0;i<array.length;i++) {
+				array[i]=numero=sc.nextInt();
+				sumaArrays+=array[i];
+				if(array[i]%2==0) {
+					System.out.println("El número "+array[i]+" es par");
+				}else {
+					System.out.println("El número "+array[i]+" es impar");
+				}
+				
+				contador++;
+			}
+		System.out.println("La suma de los números es= "+sumaArrays);
+		ejercicio123Arrays.mostrarArrayInverso(array);
+		ejercicio123Arrays.minMax(array);
+		
+		System.out.println("Introduce nuevos datos para el segundo array");
+		array2=new int[2];
+		porcentajeArray=new int[2];
+		while(contador2<2) {
+			for(int i=0;i<array2.length-1;i++) {
+				for(int j=0;j<porcentajeArray.length-1;j++) {
+					array2[i]=numero2=sc.nextInt();
+					suma+=numero2;
+					
+					porcentajeArray[j]=porcentaje=array2[i]*20/100;
+					System.out.println("El porcentaje de este número con respecto al total es= "+porcentaje+" %");
+					
+					contador2++;
+				}
+				
+			}
+		}
+		
+		media=suma/contador2;
+		porcentajemedia=media*contador2/100;
+		System.out.println("El porcentaje de la media es= "+porcentajemedia);
+		
+			for(int i=0;i<porcentajeArray.length;i++) {
+				if(porcentajeArray[i]>porcentajemedia) {
+					System.out.println("El porcentaje "+porcentajeArray[i]+" es superior a la media");
+			}else {
+				System.out.println("El porcentaje "+porcentajeArray[i]+" no es superior a la media");
+				}
+			}
+		
+		}
+		System.out.println("El nuevo array de 20 números es= "+Arrays.toString(array2));
+		System.out.println("El total de porcentajes de los 20 números son= "+Arrays.toString(porcentajeArray));
+		System.out.println("La media de los números introducidos es= "+media);
+		}
+	}
+
+
