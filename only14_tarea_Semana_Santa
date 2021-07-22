@@ -1,0 +1,44 @@
+
+/*B) Dado el array de enteros nums devolver true si solo contiene los valores 1 o 4.
+
+public boolean only14(int[] nums)
+
+http://codingbat.com/prob/p186672  (Enlace)
+
+only14([1, 4, 1, 4]) → true
+only14([1, 4, 2, 4]) → false
+only14([1, 1]) → true
+*/
+
+
+import java.util.Scanner;
+
+public class ejercicio2B {
+static Scanner sc=new Scanner (System.in);
+	static boolean contieneLosNumeros;
+	public static boolean encontrarNumeros(int[]array,int numero1,int numero2) {
+		for(int i=0;i<array.length;i++) {
+			if((array[i]!=numero1)&&(array[i]!=numero2)) {
+				return contieneLosNumeros=false;
+			}
+		
+			}
+		return contieneLosNumeros=true;
+		
+	}
+		
+	
+	public static void main(String[] args) {
+		int[]array= {1,4,1,4};
+		System.out.println("Elige un número");
+		int numero1=sc.nextInt();
+		System.out.println("Elige otro número");
+		int numero2=sc.nextInt();
+		
+		System.out.println("A continuación se muestra si el array contiene los dos números [true si es cierto y false si es falso ] "+ejercicio2B.encontrarNumeros(array, numero1, numero2));
+		
+		
+
+	}
+
+}
