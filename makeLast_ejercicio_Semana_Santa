@@ -1,0 +1,58 @@
+
+/* A)  Dado el  array de enteros nums devolver un nuevo array con el doble de tamaño donde todos sus valores estén a cero salvo el último que tendrá el mismo valor que último valor de array nums.
+
+public int[] makeLast(int[] nums)
+
+http://codingbat.com/prob/p137188 (Enlace)
+
+
+makeLast([4, 5, 6]) → [0, 0, 0, 0, 0, 6]
+makeLast([1, 2]) → [0, 0, 0, 2]
+makeLast([3]) → [0, 3]
+*/
+
+
+
+import java.util.Arrays;
+
+public class ejercicio2A {
+static int[] array2;
+static int tamaño;
+static int numero;
+	public static void calcularTamañoArray(int[]array1) {
+		for(int i=0;i<array1.length;i++) {
+			tamaño=array1.length;
+		}
+		array2=new int[tamaño*2];
+		
+	}
+	public static void rellenarArray(int[]array1) {
+		
+		for(int i=0;i<=array1.length-1;i++) {
+			if (array1[i]==array1[array1.length-1]) {
+				numero=array1[i];
+			}
+			
+		}
+		System.out.println(numero);
+		
+		for(int i=0;i<=array2.length-1;i++) {
+			
+			if (array2[i]==array2[array2.length-1]) {
+				array2[array2.length-1]=numero;
+			}else {
+				array2[i]=0;
+			}
+		}
+		System.out.println(Arrays.toString(array2));
+	}
+
+
+	public static void main(String[] args) {
+		int []array1= {4,5,6};
+		ejercicio2A.calcularTamañoArray(array1);
+		ejercicio2A.rellenarArray(array1);
+
+	}
+
+}
