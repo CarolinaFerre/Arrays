@@ -299,3 +299,13 @@ Para saber más Para saber más
 Las matrices tienen asociadas un amplio abanico de operaciones (transposición, suma, producto, etc.). En la siguiente página tienes ejemplos de
 como realizar algunas de estas operaciones, usando por supuesto arrays:
 
+
+
+ARRAYS.BINARYSEARCH()
+
+//Arrays.binarySearch método que se usa para buscar un elemento en un array
+            int pos = Arrays.binarySearch(this.tvalores, 0, this.valoresAlmacenados, num);
+            if (pos < 0) {
+                pos = pos * -1 - 1;
+            }
+
