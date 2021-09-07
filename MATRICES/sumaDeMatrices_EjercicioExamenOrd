@@ -1,0 +1,50 @@
+
+//EJERCICIO EXAMEN 2021 CONVOCATORIA ORDINARIA
+
+/*(1.5 Puntos)
+B) Realizar un método que reciba una matriz de enteros y me devuelva la suma de todos los valores que no están en la diagonal (0,0) (1,1) (2,2).... Se supone que la matriz es cuadrada, es decir tiene el mismo número de filas y de columnas.
+
+static public int calSumaSinDiagonal(int m[][]){
+..
+}
+Ejemplo:
+Si tenemos la matriz m con los valores siguientes
+2	3	1
+3	10	2
+0	2	5
+
+calSumaSinDiagonal(m) → 11  = (3 + 1 + 3 + 2 + 0 + 2 )  NO SE SUMARÍAN ( 2,10,5)
+ */
+
+
+package examen2021;
+
+public class sumaDeMatriz {
+static int suma;
+
+	public static void main(String[] args) {
+		//Declaración de la matriz
+		
+		int[][]matriz= {{2,3,1},{3,10,2},{0,2,5}};
+		
+		for(int i=0;i<matriz.length;i++) {
+			
+			//primero se recorre las esquinas de la primera y última
+			//matriz y el centro de la matriz de en medio 2,10,5
+			//Esos valores van a tener valor 0
+			
+			matriz[i][i]=0;
+			
+			for(int j=0;j<matriz.length;j++) {
+			//Se recorre el resto de elementos de la matriz
+				System.out.println(matriz[i][j]);
+			//Se calcula los elementos
+				suma+=matriz[i][j];
+				}
+			}
+		System.out.println(suma);
+		}
+	
+	}
+
+
