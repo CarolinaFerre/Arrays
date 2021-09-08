@@ -58,3 +58,61 @@ public class Main{
     
     
     
+    
+    Cómo Recorrer una Matriz en Java
+Podemos recorrer una matriz de varias formas. En cualquier caso, al ser un recorrido de dos dimensiones, necesitaremos dos índices:
+
+Por filas y columnas
+public class RecorrerMatrizPorFilasYColumnas {
+	public static void main(String[] args) {
+		int[][] matriz = new int[50][100]; // Matriz de números enteros que supondremos llena.
+						   // 50 filas y 100 columnas.
+	
+		for (int i = 0; i < 50; i++)		// El primer índice recorre las filas.
+			for (int j = 0; j < 100; j++){	// El segundo índice recorre las columnas.
+				// Procesamos cada elemento de la matriz.
+				System.out.println(matriz[i][j]);
+			}
+	}
+}
+Por columnas y filas
+public class RecorrerMatrizPorColumnasYFilas {
+	public static void main(String[] args) {
+		int[][] matriz = new int[50][100]; // Matriz de números enteros que supondremos llena.
+						   // 50 filas y 100 columnas.
+	
+		for (int i = 0; i < 100; i++)		// El primer índice recorre las columnas.
+			for (int j = 0; j < 50; j++){	// El segundo índice recorre las filas.
+				// Procesamos cada elemento de la matriz.
+				System.out.println(matriz[j][i]);	// ¡Índices cambiados de orden!
+			}
+	}
+}
+Por filas y columnas al revés
+public class RecorrerMatrizPorFilasYColumnasAlReves {
+	public static void main(String[] args) {
+		int[][] matriz = new int[50][100]; // Matriz de números enteros que supondremos llena.
+						   // 50 filas y 100 columnas.
+	
+		for (int i = 49; i > 0; i--)		// El primer índice recorre las filas.
+			for (int j = 99; j > 0; j--){	// El segundo índice recorre las columnas.
+				// Procesamos cada elemento de la matriz.
+				System.out.println(matriz[i][j]);
+			}
+	}
+}
+O sin cambiar los índices:
+
+public class RecorrerMatrizPorFilasYColumnasAlReves2 {
+	public static void main(String[] args) {
+		int[][] matriz = new int[50][100]; // Matriz de números enteros que supondremos llena.
+						   // 50 filas y 100 columnas.
+	
+		for (int i = 0; i < 50; i++)		// El primer índice recorre las filas.
+			for (int j = 0; j < 100; j++){	// El segundo índice recorre las columnas.
+				// Procesamos cada elemento de la matriz.
+				System.out.println(matriz[49 - i][99 - j]);
+			}
+	}
+}
+
