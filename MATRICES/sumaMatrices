@@ -1,0 +1,51 @@
+
+
+/*/**
+ * 7.2 Arrays bidimensionales
+ * 
+ * 2. Escribe un programa que pida 20 números enteros.
+ *    Estos números se deben introducir en un array de 4 filas por 5 columnas.
+ *    El programa mostrará las sumas parciales de filas y columnas igual que
+ *    si de una hoja de cálculo se tratara.
+ *    La suma total debe aparecer en la esquina inferior derecha.
+ * 
+ * @author Luis José Sánchez
+ */ 
+
+package matrices;
+
+import java.util.Scanner;
+
+public class ejercicio2 {
+	static Scanner sc=new Scanner(System.in);
+	static int contador=0;
+	static int num;
+	static int suma;
+	public static void main(String[] args) {
+		
+		int[][] array=new int[4][5];
+		System.out.println("Introduce números");
+		
+		
+			
+			for(int filas=0;filas<4;filas++) {
+				array[filas][filas]+=num;
+				for(int columnas=0;columnas<5;columnas++) {
+					array[filas][columnas]=num=sc.nextInt();
+				}
+			}
+			
+		
+		
+		for(int filas1=0;filas1<4;filas1++) {
+			for(int columnas1=0;columnas1<5;columnas1++) {
+				suma+=array[filas1][columnas1];
+				System.out.print(array[filas1][columnas1]);
+				
+			}
+		}
+		System.out.println();
+		System.out.println("LA SUMA DE LA MATRIZ ES: "+suma);
+	}
+
+}
