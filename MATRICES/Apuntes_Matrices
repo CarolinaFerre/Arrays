@@ -1,0 +1,60 @@
+
+MATRICES MULTIDIMENSIONALES:
+_____________________________
+
+
+Son matrices que contienen otros matrices. El matriz bidimensional es el matriz multidimensional más básico.
+
+Para crear matrices multidimensionales, coloca cada matriz dentro de su propio conjunto de llaves.
+
+UN EJEMPLO DE UN MATRIZ BIDIMENSIONAL:
+
+int[][] sample={{1,2,3},{4,5,6}};
+
+Esto declara un matriz con dos matrices como sus elementos. Para acceder un elementos en el matriz bidimensional, utiliza dos índices, uno 
+para el matriz y otro para el elemento dentro de ese matriz.
+
+El siguiente ejemplo accede al primer elemento en el segundo matriz del ejemplo anterior.
+
+int x=sample[1][0];
+System.out.println(x);
+
+Los dos índices del matriz son llamados índice de fila e índice de columna.
+
+¿Cuál es la salida de este código?
+String array[][]={{"Hey","John","Bye"},{"John","Johnson","Hello"}};
+
+System.out.println(array[1][1]);
+
+Johnson
+
+
+Puedes obtener y fijar los elementos de un arreglo multidimensional utilizando el mismo par de corchetes.
+
+int[][]myArr={{1,2,3},{4},{5,6,7}};
+myArr[0][2]=42;
+int x=myArr[1][0]; //4
+
+El arreglo bidimensional anterior contiene tres arreglos. El primer arreglo tiene tres elementos, el segundo tiene un único elemento y el último de estos
+tiene tres elementos.
+
+/*Se te da una matriz 3*3 con números*/
+
+public class Main{
+  public static void main(String[]args){
+    int[][]matrix={
+      {8,1,6},
+      {3,5,7},
+      {4,9,0},
+      };
+      
+      for(int i=0;i<matrix.length;i++){
+        for(int j=0;j<matrix.length;j++){
+          System.out.println(matrix[i][j]);
+          }
+        }
+      }
+    }
+    
+    
+    
