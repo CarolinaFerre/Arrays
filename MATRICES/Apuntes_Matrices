@@ -16,6 +16,7 @@ para el matriz y otro para el elemento dentro de ese matriz.
 
 El siguiente ejemplo accede al primer elemento en el segundo matriz del ejemplo anterior.
 
+LA PRIMERA POSICIÓN ES DE LA FILA Y LA SEGUNDA ES LA COLUMNA.
 int x=sample[1][0];
 System.out.println(x);
 
@@ -57,9 +58,11 @@ public class Main{
     }
     
     
-    
+    PRIMERO SE RECORREN LAS FILAS Y LUEGO LAS COLUMNAS.
     
     Cómo Recorrer una Matriz en Java
+    _________________________________
+    
 Podemos recorrer una matriz de varias formas. En cualquier caso, al ser un recorrido de dos dimensiones, necesitaremos dos índices:
 
 Por filas y columnas
@@ -101,6 +104,12 @@ public class RecorrerMatrizPorFilasYColumnasAlReves {
 			}
 	}
 }
+
+
+
+
+
+
 O sin cambiar los índices:
 
 public class RecorrerMatrizPorFilasYColumnasAlReves2 {
