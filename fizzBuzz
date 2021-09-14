@@ -1,0 +1,75 @@
+
+
+
+/* Esta es una versión un poco más difícil del famoso problema de FizzBuzz 
+ * que a veces se presenta como un primer problema para las entrevistas de 
+ * trabajo. (Consulte también: Código FizzBuzz). Considere la serie de números 
+ * que comienzan en el inicio y van hasta el final, pero sin incluirlo, 
+ * por ejemplo, inicio = 1 y final = 5 da la serie 1, 2, 3, 4. 
+ * Devuelve una nueva cadena [] que contiene la forma de cadena de estos 
+ * números, excepto para múltiplos de 3, use "Fizz" en lugar del número, 
+ * para múltiplos de 5 use "Buzz", y para múltiplos de 3 y 5 use "FizzBuzz". 
+ * En Java, String.valueOf (xxx) hará que la forma String sea int u otro tipo.
+ *  Esta versión es un poco más complicada que la versión habitual, 
+ *  ya que debe asignar e indexar en una matriz en lugar de solo imprimir, 
+ *  y variamos el inicio / final en lugar de solo hacer siempre 1..100.
+ *  
+ *  fizzBuzz(1, 6) → ["1", "2", "Fizz", "4", "Buzz"]
+	fizzBuzz(1, 8) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7"]
+	fizzBuzz(1, 11) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz"]
+ *  */
+
+package ejerciciosdearrays;
+
+import java.util.Arrays;
+
+public class fizzBuzz {
+	static int inicio_;
+	static int final_;
+	static String[]copia;
+	static int contador;
+	static int indice=0;
+	public static void indices(int[]array_) {
+		inicio_=array_[0];
+		final_=array_[array_.length-1];
+	}
+	public static void crearArray() {
+		for(int i=inicio_;i<=final_;i++) {
+			contador++;
+		}
+		copia=new String[contador];
+	}
+	
+	public static void recorrerArray(String[]copia) {
+		for(int i=inicio_;i<=final_;i++) {
+			System.out.println(i);
+			
+			if((i%3==0)&(i%5==0)) {
+				copia[indice]="FizzBuzz";
+				indice++;
+			}else if(i%3==0) {
+				copia[indice]="Fizz";
+				indice++;
+			}else if(i%5==0) {
+				copia[indice]="Buzz";
+				indice++;
+			}else {
+				String palabra=String.valueOf(i);
+				copia[indice]=palabra;
+				indice++;
+				}
+			}
+		}
+	
+	public static void main(String[] args) {
+		int[] array_= {1,25};
+		
+		fizzBuzz.indices(array_);
+		fizzBuzz.crearArray();
+		fizzBuzz.recorrerArray(copia);
+		System.out.println(Arrays.toString(copia));
+		
+		
+	}
+
+}
