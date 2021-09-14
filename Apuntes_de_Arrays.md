@@ -1,6 +1,7 @@
 # ejercicios-de-arrays
 
 Arrays unidimensionales.
+__________________________
 
 Todos los lenguajes de programación permiten el uso de arrays, veamos como son en Java.
 Los arrays permiten almacenar una colección de objetos o datos del mismo tipo. Son muy útiles y su utilización es muy simple:
@@ -166,11 +167,79 @@ System.out.println(diassemana[0].substring(0,2));
 
 
 
+EJEMPLO:
+CALCULAR VALOR MÁXIMO Y MÍNIMO DE ARRAY
+________________________________________
+
+
+/* Dada una longitud de matriz de 1 o más de enteros, 
+ * devuelve la diferencia entre los valores más grande 
+ * y más pequeño de la matriz. Nota: los métodos integrados 
+ * Math.min (v1, v2) y Math.max (v1, v2) devuelven el menor 
+ * o el mayor de dos valores.
+ * 
+ * 
+	bigDiff([10, 3, 5, 6]) → 7
+	bigDiff([7, 2, 10, 9]) → 8
+	bigDiff([2, 10, 7, 2]) → 8
+ * */
+
+package ejerciciosdearrays;
+
+import java.util.Arrays;
+
+public class bigDiff {
+	
+	static int max;
+	static int min;
+	static int contador;
+	static int[]copia;
+	
+	public static void valorMaximoMinimo(int[]array_) {
+		max=min=array_[0];
+		
+		for(int i=0;i<array_.length;i++) {
+			if(array_[i]>max) {
+				max=array_[i];
+			}else if(array_[i]<min) {
+				min=array_[i];
+			}
+		}
+		System.out.println("El valor máximo del array es "+max);
+		System.out.println("El valor mínimo del array es "+min);
+		
+	}
+	public static int contarCifras() {
+		for(int i=min;i<max;i++) {
+			contador++;
+		}
+		return contador;
+		
+	}
+	
+	public static void crearArray() {
+		copia=new int[1];
+		copia[0]=contador;
+		System.out.println(Arrays.toString(copia));
+	}
+	
+	public static void main(String[] args) {
+		int[]array_= {20,1,5,6};
+		bigDiff.valorMaximoMinimo(array_);
+		System.out.println("La diferencia entre el máximo y mínimo es "+bigDiff.contarCifras());
+		bigDiff.crearArray();
+	}
+
+}
+
+
+
 
 
 
 
 . Arrays multidimensionales.
+____________________________
 
 
 ¿Qué estructura de datos utilizarías para almacenar los píxeles de una imagen digital? Normalmente las imágenes son cuadradas o
