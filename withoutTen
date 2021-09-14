@@ -1,0 +1,33 @@
+
+
+/* Crear un array que sustituya los números 10 por la 
+ * continuación del array:
+ * 
+withoutTen([1, 10, 10, 2]) → [1, 2, 0, 0]
+withoutTen([10, 2, 10]) → [2, 0, 0]
+withoutTen([1, 99, 10]) → [1, 99, 0]
+ */
+
+package ejerciciosdearrays;
+
+import java.util.Arrays;
+
+public class withoutTen {
+	static int indice=0;
+	public static void tenPosiciones(int[]ten,int[]copia) {
+		for(int i=0;i<=ten.length-1;i++) {
+			if(ten[i]!=10) {
+				copia[indice]=ten[i];
+				indice++;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		int[] ten= {1,10,10,2};
+		int[]copia=new int[ten.length];
+		
+		withoutTen.tenPosiciones(ten,copia);
+		System.out.println(Arrays.toString(copia));
+	}
+
+}
