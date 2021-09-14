@@ -1,0 +1,35 @@
+
+
+
+/*
+ * Dada una matriz de enteros, devuelve verdadero si la matriz contiene 
+ * 3 valores pares o 3 impares, todos uno al lado del otro.
+ * 	modThree([2, 1, 3, 5]) → true
+	modThree([2, 1, 2, 5]) → false
+	modThree([2, 4, 2, 5]) → true */
+
+package ejerciciosdearrays;
+
+public class parImpar {
+static boolean resultado;	
+	public static void calcularSiParImpar(int[]modThree) {
+		for(int i=0;i<modThree.length-4;i++) 
+			if((modThree[i]%2==0)&(modThree[i+1]%2==0)&(modThree[i+2]%2==0)) {
+				resultado=true;
+				
+			}else if((modThree[i]%3==0)&(modThree[i+1]%3==0)&(modThree[i+2]%3==0)) {
+				resultado=true;
+			}else {
+				resultado=false;
+			}
+		
+			System.out.println(resultado);
+	}
+	public static void main(String[] args) {
+		int[] modThree= {2,2,4,3,3};
+		parImpar.calcularSiParImpar(modThree);
+		
+
+	}
+
+}
