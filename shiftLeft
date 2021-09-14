@@ -1,0 +1,37 @@
+
+
+
+/*Crear un array nuevo con todos los números del array más el primer número
+ * del array en la última posición
+ 
+    shiftLeft([6, 2, 5, 3]) → [2, 5, 3, 6]
+    shiftLeft([1, 2]) → [2, 1]
+    shiftLeft([1]) → [1]
+    
+ *  */
+ 
+
+package ejerciciosdearrays;
+
+import java.util.Arrays;
+
+public class shifLeft {
+	static int indice=0;
+	public static void arraNuevo(int[]array_,int[]copia) {
+		for(int i=0;i<array_.length;i++) {
+			if(i!=indice) {
+				copia[indice]=array_[i];
+				indice++;
+			}
+			copia[copia.length-1]=array_[0];
+		}
+	}
+	public static void main(String[] args) {
+		int[] array_= {6,2,5,3};
+		int[]copia=new int[array_.length];
+		shifLeft.arraNuevo(array_, copia);
+		System.out.println(Arrays.toString(copia));
+		
+	}
+
+}
