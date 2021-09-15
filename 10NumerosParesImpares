@@ -1,0 +1,53 @@
+
+
+/* Leer 10 números, almacenarlos en una tabla ,
+ *  almacenar los pares en un arraylist
+ * y en otro arrayList los impares. Mostrarlo luego por pantalla */
+
+
+package ejercicios_Arrays;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ejercicio3 {
+	static Scanner sc=new Scanner(System.in);
+	static int contador=0;
+	
+	public static void almacenarNumeros(int[]array,ArrayList pares,ArrayList impares) {
+		
+		System.out.println("Introduce números");
+		while(contador!=10) {
+			for(int i=0;i<array.length;i++) {
+				array[i]=sc.nextInt();
+				if(array[i]%2==0) {
+					pares.add(array[i]);
+				}else {
+					impares.add(array[i]);
+				}
+				contador++;
+			}
+		}
+	}
+	public static void recorrerListaPares(ArrayList pares) {
+		System.out.println("Los números pares del arreglo son:");
+		for(int i=0;i<pares.size();i++) {
+			System.out.println(pares.get(i));
+		}
+	}
+	public static void recorrerListaImpares(ArrayList impares) {
+		System.out.println("Los números impares del arreglo son: ");
+		for(int i=0;i<impares.size();i++) {
+			System.out.println(impares.get(i));
+		}
+	}
+	public static void main(String[] args) {
+		int[]array=new int[10];
+		ArrayList<Integer>pares=new ArrayList<Integer>();
+		ArrayList<Integer>impares=new ArrayList<Integer>();
+		ejercicio3.almacenarNumeros(array, pares, impares);
+		ejercicio3.recorrerListaPares(pares);
+		ejercicio3.recorrerListaImpares(impares);
+	}
+
+}
