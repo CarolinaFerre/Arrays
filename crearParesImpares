@@ -1,0 +1,82 @@
+
+
+
+/* 16.- Define tres tablas de 10 enteros Tabla1 ,Tabla2 y Tabla3
+ *  rellenar la primera tabla con 10 valores, copiar en Tabla2 los elementos de tabla1 que sean pares
+ *  ,copiar en tabla 3 los resultados impares
+ *  y mostrar los elementos almacenados en tabla2 y tabla 3.    
+ *  Por ejemplo si  se han copiado 5 elementos sólo se deben mostrar esos 5.
+
+Introduzca 10 valores
+9  3  12  3  3  8  10  4  6  5
+Números pares introducidos:5
+12 8 10 4 6
+Números impares introducidos:5
+9 3 3 5
+ */
+
+
+package ejercicios_Arrays;
+
+import java.util.Scanner;
+
+public class ejercicio16 {
+static Scanner sc=new Scanner(System.in);
+	
+	public static void crearParesImpares(int[]tabla) {
+		int indice2=0;
+		int indice3=0;
+		
+		int contadorPares=0;
+		int contadorImpares=0;
+		
+		for(int a=0;a<tabla.length;a++) {
+			if(tabla[a]%2==0) {
+				contadorPares++;
+			}else if(tabla[a]%3==0){
+				contadorImpares++;
+			}
+		}
+		int[]tabla2=new int[contadorPares];
+		int[]tabla3=new int[contadorImpares];
+		for(int i=0;i<tabla.length;i++) {
+			if(tabla[i]%2==0) {
+				tabla2[indice2]=tabla[i];
+				indice2++;
+				contadorPares++;
+			}else if(tabla[i]%3==0){
+				tabla3[indice3]=tabla[i];
+				indice3++;
+				contadorImpares++;
+			}
+			System.out.println();
+		}
+		
+		System.out.println("Numeros pares introducidos "+contadorPares);
+		
+		for(int i=0;i<tabla2.length;i++) {
+			System.out.print(tabla2[i]);
+		}
+		System.out.println();
+		System.out.println("Numeros impares introcidos "+contadorImpares);
+		for(int j=0;j<tabla3.length;j++) {
+			System.out.print(tabla3[j]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Introduce 10 números");
+		int contador=0;
+		int[] tabla=new int[10];
+		int indice=0;
+		while(contador!=10) {
+			tabla[indice]=sc.nextInt();
+			indice++;
+			contador++;
+		}
+		ejercicio16.crearParesImpares(tabla);
+		
+		
+	}
+
+}
