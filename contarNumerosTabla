@@ -1,0 +1,32 @@
+
+
+/* 6.	Realizar una función que reciba como parámetros un número y una tabla de enteros , 
+ * y que deberá devolver cuantas veces aparece el número en la tabla. */
+
+
+package ejercicios_Arrays;
+
+import java.util.Scanner;
+
+public class ejercicio6 {
+static Scanner sc=new Scanner(System.in);
+
+	public static void contarNumero(int numero,int[]listaNumeros) {
+		int contador=0;
+		for(int i=0;i<listaNumeros.length;i++) {
+			if(listaNumeros[i]==numero) {
+				contador++;
+			
+			}
+		}
+		System.out.println("El número de veces que aparece el número en el arreglo es "+contador);
+	}
+	
+	public static void main(String[] args) {
+		int[]listaNumeros= {3,5,6,7,5,5,3,4,2,3,5,6,7,9,8,7,0,0,0,0,6,5,5,5,5};
+		System.out.println("Introduce un número");
+		int numero=sc.nextInt();
+		ejercicio6.contarNumero(numero, listaNumeros);
+	}
+
+}
