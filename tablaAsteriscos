@@ -1,0 +1,51 @@
+
+/* Rellenar una tabla 5 enteros 
+ * y mostrar los valores de la tabla  mediante asteriscos
+ 
+ Introduzca 5 valores:
+4 1 7 2 1
+Valores de la tabla:
+4:****
+1:*
+7:*******
+2:**
+1:*
+
+ */
+
+package ejercicios_Arrays;
+
+import java.util.Scanner;
+
+public class ejercicio14 {
+static Scanner sc=new Scanner(System.in);
+
+	public static void crearDibujito(int[]listaNumeros) {
+		System.out.println("Valores de la tabla");
+		for(int i=0;i<listaNumeros.length;i++) {
+			System.out.println(listaNumeros[i]+": ");
+			
+				for(int j=1;j<=listaNumeros[i];j++) {
+					
+					System.out.print("*");
+				}
+			System.out.println();	
+		}
+		
+	}
+	public static void main(String[] args) {
+		int indice=0;
+		int contador=0;
+		int[]listaNumeros=new int[5];
+		System.out.println("Introduce números ");
+		while(contador!=5) {
+			listaNumeros[indice]=sc.nextInt();
+			indice++;
+			contador++;
+		
+		
+		}
+		ejercicio14.crearDibujito(listaNumeros);
+	}
+
+}
