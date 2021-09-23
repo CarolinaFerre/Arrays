@@ -1,0 +1,69 @@
+
+
+/*Ejercicio 16
+Escribe un programa que rellene un array de 20 elementos con números enteros
+aleatorios comprendidos entre 0 y 400 (ambos incluidos). A continuación el
+programa mostrará el array y preguntará si el usuario quiere resaltar los
+múltiplos de 5 o los múltiplos de 7. Seguidamente se volverá a mostrar el array
+escribiendo los números que se quieren resaltar entre corchetes.
+Ejemplo:
+159 204 20 250 178 90 353 32 229 357 224 54 260 310 140 249 335 326 223 13
+¿Qué números quiere resaltar? (1 – los múltiplos de 5, 2 – los múltiplos de 7): 1
+159 204 [20] [250] 178 [90] 353 32 229 357 224 54 [260] [310] [140] 249 [335] 326 223 13
+ */
+
+package ejercicios_excepciones;
+
+import java.util.Scanner;
+
+public class ejerciciosArrays {
+static Scanner sc=new Scanner(System.in);
+
+	public static void multiplos(int[]lista) {
+		
+		System.out.println("Qué números quiere resaltar?, (1 – los múltiplos de 5, 2 – los múltiplos de 7)");
+		
+		int respuesta=sc.nextInt();
+		if(respuesta==1) {
+			for(int i=0;i<=lista.length-1;i++) {
+				if(lista[i]%5==0) {
+					System.out.println("["+lista[i]+"]");
+				}else {
+					System.out.println(lista[i]);
+					}
+			
+				}
+		}else if(respuesta==2) {
+			for(int i=0;i<=lista.length-1;i++) {
+				if(lista[i]%7==0) {
+					System.out.println("["+lista[i]+"]");
+				}else {
+					System.out.println(lista[i]);
+					}
+			}
+		}else {
+			System.out.println("No he entendido tu respuesta");
+		}
+	}
+
+	public static void main(String[] args) {
+		int contador=0;
+		int[]lista=new int[20];
+		
+		
+		//Rellenamos el array de longitud 20 con números comprendidos del 0 al 400
+		while(contador!=20) {
+			
+		
+		for(int i=0;i<=lista.length-1;i++) {
+			int num=(int) (Math.random()*399+1);
+			lista[i]=num;
+			contador++;
+			}
+		
+		}
+		ejerciciosArrays.multiplos(lista);
+	}
+	
+
+}
