@@ -1,0 +1,41 @@
+
+
+/*Ejercicio canBalance de codingbat que calcula si los tres primeros
+ * elementos del array suman lo mismo
+ * que si se suman los dos últimos. Devuelve true si es cierto
+ * y false si es falso
+ */
+package ejerciciosdearrays;
+
+public class canBalance {
+
+	public static boolean canBalance_(int[]array) {
+		//Calculo la suma de todo el array
+		int sumaIzquierda = 0;
+		int sumaDerecha= 0;
+		boolean seSuman=false;
+		for(int i=0;i<array.length;i++) {
+			sumaIzquierda+=array[i];
+		}
+		//Calculo la suma de todo el array descontando los dos últimos
+		//lo descuento de la suma de la derecha
+		for(int j=0;j<array.length-2;j++) {
+			sumaDerecha+=array[j];
+			sumaIzquierda-=array[j];
+		}
+		//Comparo ambas sumas y si coinciden devuelve true sino false
+		if(sumaIzquierda==sumaDerecha) {
+			seSuman=true;
+			return seSuman;
+		}else {
+			seSuman=false;
+			return seSuman;
+		}
+	}
+	public static void main(String[] args) {
+		int[] array= {2,3,1,4,2};
+		System.out.println(canBalance.canBalance_(array));
+
+	}
+
+}
